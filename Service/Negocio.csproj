@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="ElementoNegocio.cs" />
+    <Compile Include="HabilidadNegocio.cs" />
     <Compile Include="PokemonNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

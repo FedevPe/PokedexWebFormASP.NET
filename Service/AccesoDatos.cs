@@ -25,7 +25,7 @@ namespace Negocio
         public AccesoDatos()
         {
             //Intanciación de objetos
-            conexion = new SqlConnection("server = .\\SQLEXPRESS; database = POKEDEX_DB; integrated security = true");
+            conexion = new SqlConnection("server = .\\SQLEXPRESS; database = MundoPokemon_DB; integrated security = true");
             cmd = new SqlCommand();
         }
 
@@ -35,7 +35,11 @@ namespace Negocio
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.CommandText = consulta;
         }
-
+        public void SetProcedure(string sp)
+        {
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = sp;
+        }
         //Metodo para abrir la conexion con la DB, ejecutar la lectura y guardar los datos en el reader
         public void EjecutarLectura()
         {
