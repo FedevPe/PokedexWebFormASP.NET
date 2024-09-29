@@ -1,156 +1,147 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PokedexWebForms._Default" %>
+﻿<%@ Page Title="Loading..." Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PokedexWebForms._Default" %>
+<!DOCTYPE html>
 
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<html lang="es">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %></title>
 
-    <div class="row mt-4">
-        <div class="col-12 text-center">
-            <img class="sizeImg" src="https://upload.wikimedia.org/wikipedia/commons/5/51/Pokebola-pokeball-png-0.png">
-            <span class="fs-2">Bienvenidos a la Pokedex!</span>
-        </div>   
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="Resources/FaviconPokeball.png" rel="shortcut icon" type="image/x-icon" />
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            var elemento = document.getElementById("pokeballAnim");
+
+            // Animación de entrada
+            setTimeout(function () {
+                elemento.classList.add("bounce-in-top");
+            }); // Añade la clase "activo" después de 1 segundo
+            // Animación estática
+            setTimeout(function () {
+                elemento.classList.add("pulsate-fwd");
+            }, 1500); // Añade la clase "activo" después de 1 segundo
+            setTimeout(function () {
+                elemento.classList.replace("pulsate-fwd","rotate-out-center");
+            }, 5000); // Añade la clase "activo" después de 1 segundo
+            // Animación de salida
+        });
+         //Redirigir después de 3 segundos (3000 ms)
+        setTimeout(function () {
+            window.location.href = 'ListPokemons.aspx'; // Cambia por la página de destino
+        }, 4000);
+    </script>
+
+</head>
+<body>       
+    <div class="pokeball" id="pokeballAnim">
+        <div class="pokeball-button"></div>
+        <div class="shine"></div>
     </div>
-        <hr>
-    <div class="container-fluid rounded border border-light shadowCard">
-        <div class="row">
-            <div class="col">
-                <span class="fw-bold fs-4">Buscar Pokemon</span>
-            </div>
-        </div>
-        <div class="row g-2">
-            <div class="col mb-3">
-                <div class="form-floating">
-                    <input class="form-control" id="txtSearch" type="text" placeholder="">  
-                    <label class="form-label" for="txtSearch">Nombre o número</label>
-                </div>
-            </div>
-            <div class="col-md-4 col-12 align-content-center text-end ">
-                <button class="btn btn-primary"><i class="fa-solid fa-circle-plus me-2"></i>Agregar Pokemon</button>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <div class="row mt-4">
-        <%foreach (Dominio.Pokemon pokemon in ListaPokemons)
-          {%>
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-2">
-                <div class="card cardAnimation shadowCard h-100">
-                    <div class="card-img-top text-center">
-                        <img src="<%:pokemon.ImgUrl%>" alt="" class="imgPokemon">
-                    </div>
-                    <div class="card-header">
-                        <div class="text-start">
-                            <h5><%:pokemon.Nombre%></h5>
-                        </div>
-                        <div class="card-text">                            
-                            <div class="text-end">
-                                <span class="btn btn-light fs-6 fst-italic fw-bold">N° <%:pokemon.Numero%></span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        <%} %>
-    </div>
-    
+
     <style>
-    .sizeImg{
-        height: 100px;
-        width: 100px;
-        filter: drop-shadow(4px 6px 7px black);
-    }
-    .imgPokemon{
-        height: 250px;
-        width: 250px;
-        filter: drop-shadow(4px 6px 7px grey);
-        transition: all 0.3s ease;
-    }
-    .imgPokemon:hover{
-        transform: scale(1.03);
-    }
-    .cardAnimation{
-        transition: all 0.3s ease;
-    }
-    .cardAnimation:hover{
-        transform: scale(1.01);
-    }
-    .shadowCard{
-        box-shadow: 0.5px 0px 5px grey; 
-    }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .pokeball {
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .pokeball::before {
+            content: "";
+            position: absolute;
+            background-color: #ff1a1a;
+            width: 100%;
+            height: 50%;
+            top: 0;
+        }
+
+        .pokeball::after {
+            content: "";
+            position: absolute;
+            top: calc(50% - 5px);
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: #000;
+        }
+
+        .pokeball-button {
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            border: 10px solid #000;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            box-shadow: 0 0 0 5px #fff;
+        }
+
+        .pokeball-button::before {
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border: 4px solid #7f7f7f;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .shine {
+            position: absolute;
+            width: 30px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            transform: rotate(45deg);
+            top: 25px;
+            left: 25px;
+        }
+        .bounce-in-top{
+            -webkit-animation:bounce-in-top 1s both;
+            animation:bounce-in-top 1s both;
+        }
+        .rotate-out-center{-webkit-animation:rotate-out-center .6s cubic-bezier(.55,.085,.68,.53) both;animation:rotate-out-center .6s cubic-bezier(.55,.085,.68,.53) both}
+        .pulsate-fwd{
+            -webkit-animation:pulsate-fwd 0.5s ease-in-out infinite both;
+            animation:pulsate-fwd 0.5s ease-in-out infinite both;
+        }
+        
+@-webkit-keyframes bounce-in-top{0%{-webkit-transform:translateY(-500px);transform:translateY(-500px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}38%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:1}55%{-webkit-transform:translateY(-65px);transform:translateY(-65px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}72%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}81%{-webkit-transform:translateY(-28px);transform:translateY(-28px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}90%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}95%{-webkit-transform:translateY(-8px);transform:translateY(-8px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}100%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}@keyframes bounce-in-top{0%{-webkit-transform:translateY(-500px);transform:translateY(-500px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}38%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out;opacity:1}55%{-webkit-transform:translateY(-65px);transform:translateY(-65px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}72%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}81%{-webkit-transform:translateY(-28px);transform:translateY(-28px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}90%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}95%{-webkit-transform:translateY(-8px);transform:translateY(-8px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}100%{-webkit-transform:translateY(0);transform:translateY(0);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}
+@-webkit-keyframes pulsate-fwd{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.1);transform:scale(1.1)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes pulsate-fwd{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.1);transform:scale(1.1)}100%{-webkit-transform:scale(1);transform:scale(1)}}
+@-webkit-keyframes rotate-out-center{0%{-webkit-transform:rotate(0);transform:rotate(0);opacity:1}100%{-webkit-transform:rotate(-360deg);transform:rotate(-360deg);opacity:0}}@keyframes rotate-out-center{0%{-webkit-transform:rotate(0);transform:rotate(0);opacity:1}100%{-webkit-transform:rotate(-360deg);transform:rotate(-360deg);opacity:0}}
+
     </style>
-</asp:Content>
+
+</body>
+</html>
 
 
-<%--<div class="container mt-2">
-    <div class="card-text">
-            <span>Tipo: </span>
-        <div class="row text-center mx-auto">                            
-            <%foreach (Dominio.Elemento tipo in pokemon.Tipos)
-                {%>
-                    <div class="col-6 text-center">
-                        <button class="btn btn-primary mb-2"><%:tipo.Descripcion%></button>
-                    </div>
-               <% } %>
-        </div> 
-            <span>Debilidades: </span>
-         <div class="row text-center">                            
-            <%foreach (Dominio.Elemento tipo in pokemon.Debilidades)
-                {%>
-                     <div class="col-6 text-center">
-                        <button class="btn btn-warning mb-2"><%:tipo.Descripcion%></button>
-                     </div>
-               <% } %>
-        </div>
-            <span>Habilidades: </span>                         
-            <%foreach (Dominio.Habilidad habilidad in pokemon.Habilidades)
-                {%>
-                    <div class="row">                            
-                        <div class="btn-group text-center">
-                            <button class="btn btn-success mb-2"><%:habilidad.Nombre%></button>
-                            <button class="btn btn-info mb-2"><%:habilidad.Tipo.Descripcion%></button>
-                        </div>
-                    </div> 
-               <% } %>
-    </div>
-</div>--%>
 
-<%--<div class="row mt-4">            
-    <div class="text-center">
-        <div id="carouselPokemons" class="carousel carousel-dark slide">
-            <div class="carousel-inner">          
-                <%foreach (Dominio.Pokemon pokemon in ListaPokemons)
-                  {%>
-                    <%if (flag)
-                      { %>
-                        <%:flag=false %>
-                        <div class="carousel-item <%: activeClass%>">                                
-                   <% } 
-                      else
-                      { %>
-                         <div class="carousel-item">
-                     <% }%>
-                        <div class="card">
-                            <div class="card-img-top">
-                                <img src="<%:pokemon.UrlImagen%>" alt="" class="imgPokemon">                                                                  
-                            </div>
-                            <div class="card-header">
-                                <h5><%:pokemon.Nombre%></h5>
-                                <div>
-                                    <button class="btn btn-success me-2">Tipo: <%:pokemon.Tipo.Descripcion%></button>
-                                    <button class="btn btn-warning">Debilidad: <%:pokemon.Debilidad.Descripcion%></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <%} %>                      
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPokemons" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselPokemons" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>              
-    </div>
-</div>--%>
+
+
+
+

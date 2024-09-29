@@ -7,18 +7,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Mi aplicación ASP.NET</title>
+    <title><%: Page.Title %> Pokedex</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="Resources/FaviconPokeball.png" rel="shortcut icon" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/3def95b47b.js" crossorigin="anonymous"></script>
 
 </head>
-<body class="bg-body">
+<body class="bg-color">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -39,20 +39,43 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" runat="server" href="~/">POKEDEX</a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Alternar navegación" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/ListPokemons">Pokemons</a></li>
-                    </ul>
-                </div>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-light shadow-sm border">
+            <div class="container-fluid ">            
+            <a class="link-home navbar-brand fc-white fw-bold fs-2 " runat="server" href="~/">
+                PokeApp
+            </a>
+            <button class="navbar-toggler my-3 fc-white position-relative" type="button" data-bs-toggle="collapse" data-bs-target="#menuBar" >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse my-3" id="menuBar">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item active">
+                        <a href="ListPokemons.aspx" class="nav-link">
+                            <div class="btn btn-light text-center d-flex flex-column align-items-center">
+                                <img src="Resources/Poké_Ball_icon.png" alt="">
+                                <span class="fs-6 fw-bold">Pokedex</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            <div class="btn btn-light text-center d-flex flex-column align-items-center">
+                                <img src="Resources/GymIcon.png" alt="" >
+                                <span class="fs-6 fw-bold">Gimnasios</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">
+                            <div class="btn btn-light text-center d-flex flex-column align-items-center">
+                                <img src="Resources/trainePokemon.png" alt="" class="rounded">
+                                <span class="fs-6 fw-bold">Entrenadores</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
             </div>
+        </div>
         </nav>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
@@ -67,8 +90,25 @@
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
     </asp:PlaceHolder>
     <style>
-        .bg-body{
-            background-color:whitesmoke;
+        .bg-color{
+            background-color: white;
+        }
+        .fc-white{
+            color:black;
+            border-color: white;
+        }
+        .fc-white:hover{
+            color: gray;
+        }
+        .link-home{
+            display: inline-block;
+            position: absolute;
+        }
+        @media (width<=990px) {
+            .link-home{
+                display: inline;
+                position: relative;
+            }
         }
     </style>
 </body>
