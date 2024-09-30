@@ -99,6 +99,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\pokemonDetails\bisagraPokedex.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -116,9 +117,13 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\pokemonDetails\cuadroDer.css" />
+    <Content Include="css\pokemonDetails\cuadroIzq.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ListPokemons.aspx" />
+    <Content Include="css\pokemonDetails\pokedexStyle.css" />
+    <Content Include="PokemonDetails.aspx" />
     <Content Include="PokemonsForm.aspx" />
     <Content Include="Resources\FaviconPokeball.png" />
     <Content Include="Resources\GymIcon.png" />
@@ -126,6 +131,7 @@
     <Content Include="Resources\LogoPokedex.png" />
     <Content Include="Resources\Poké_Ball_icon.png" />
     <Content Include="Resources\trainePokemon.png" />
+    <Content Include="css\pokemonDetails\screenPokedex.css" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -206,6 +212,13 @@
     </Compile>
     <Compile Include="ListPokemons.aspx.designer.cs">
       <DependentUpon>ListPokemons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PokemonDetails.aspx.cs">
+      <DependentUpon>PokemonDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PokemonDetails.aspx.designer.cs">
+      <DependentUpon>PokemonDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="PokemonsForm.aspx.cs">
       <DependentUpon>PokemonsForm.aspx</DependentUpon>

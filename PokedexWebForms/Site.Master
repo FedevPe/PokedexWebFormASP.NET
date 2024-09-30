@@ -17,6 +17,9 @@
     <link href="Resources/FaviconPokeball.png" rel="shortcut icon" type="image/x-icon" />
     <script src="https://kit.fontawesome.com/3def95b47b.js" crossorigin="anonymous"></script>
 
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
 </head>
 <body class="bg-color">
     <form runat="server">
@@ -47,42 +50,43 @@
             <button class="navbar-toggler my-3 fc-white position-relative" type="button" data-bs-toggle="collapse" data-bs-target="#menuBar" >
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <div class="collapse navbar-collapse my-3" id="menuBar">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item active">
-                        <a href="ListPokemons.aspx" class="nav-link">
-                            <div class="btn btn-light text-center d-flex flex-column align-items-center">
-                                <img src="Resources/Poké_Ball_icon.png" alt="">
-                                <span class="fs-6 fw-bold">Pokedex</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/" class="nav-link">
-                            <div class="btn btn-light text-center d-flex flex-column align-items-center">
-                                <img src="Resources/GymIcon.png" alt="" >
-                                <span class="fs-6 fw-bold">Gimnasios</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/" class="nav-link">
-                            <div class="btn btn-light text-center d-flex flex-column align-items-center">
-                                <img src="Resources/trainePokemon.png" alt="" class="rounded">
-                                <span class="fs-6 fw-bold">Entrenadores</span>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
+                <div class="collapse navbar-collapse my-3" id="menuBar">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item active">
+                            <a href="ListPokemons.aspx" class="nav-link">
+                                <div class="btn btn-light text-center d-flex flex-column align-items-center">
+                                    <img src="Resources/Poké_Ball_icon.png" alt="">
+                                    <span class="fs-6 fw-bold">Pokedex</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">
+                                <div class="btn btn-light text-center d-flex flex-column align-items-center">
+                                    <img src="Resources/GymIcon.png" alt="" >
+                                    <span class="fs-6 fw-bold">Gimnasios</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">
+                                <div class="btn btn-light text-center d-flex flex-column align-items-center">
+                                    <img src="Resources/trainePokemon.png" alt="" class="rounded">
+                                    <span class="fs-6 fw-bold">Entrenadores</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
         </nav>
-        <div class="container body-content">
+        <div class="container-fluid body-content">            
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Federico Perez - Software Developer .NET</p>
+
+            <footer class="container">
+                <hr />
+                <p>&copy; <%: DateTime.Now.Year %> - All Rights Reserved.</p>
             </footer>
         </div>
     </form>

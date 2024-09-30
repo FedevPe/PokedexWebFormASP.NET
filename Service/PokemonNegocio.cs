@@ -67,7 +67,48 @@ namespace Negocio
                 datos.CerrarConexion();
             }
         }
-        
+        public Pokemon GetPokemonById(int id)
+        {
+            Pokemon pokemon = new Pokemon();
+            AccesoDatos datos = new AccesoDatos();
+            ElementoNegocio elemento = new ElementoNegocio();
+            HabilidadNegocio habilidad = new HabilidadNegocio();
+
+            try
+            {
+                datos.ConfigurarConsulta($"Select Id, Nombre, Numero, Bio, Altura, Peso, ImgUrl, IdEvolucion from Pokemons where Id = {id}");
+                datos.EjecutarLectura();
+                while (datos.Reader.Read())
+                {
+                    pokemon.Id = (int)datos.Reader["Id"];
+                    pokemon.Nombre = (string)datos.Reader["Nombre"];
+                    pokemon.Numero = (int)datos.Reader["Numero"];
+                    pokemon.Bio = (string)datos.Reader["Bio"];
+                    pokemon.Altura = datos.Reader["Altura"].ToString();
+                    pokemon.Peso = datos.Reader["Peso"].ToString();
+                    pokemon.Tipos = elemento.ListElementTypeByIdPokemon((int)datos.Reader["Id"]);
+                    pokemon.Debilidades = elemento.ListElementWeaknessByIdPokemon((int)datos.Reader["Id"]);
+                    pokemon.Habilidades = habilidad.ListHabilitiesByPokemonId((int)datos.Reader["Id"]);
+
+                    if (!(datos.Reader["ImgUrl"] is DBNull))
+                    {
+                        pokemon.ImgUrl = (string)datos.Reader["ImgUrl"];
+                    }
+                }
+
+                return pokemon;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                datos.CerrarConexion();
+            }
+        }
+
         //public void AgregarPokemon(Pokemon newPokemon)
         //{
         //    AccesoDatos datos = new AccesoDatos();

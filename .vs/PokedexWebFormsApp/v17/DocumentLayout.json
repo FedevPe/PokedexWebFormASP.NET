@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|c:\\users\\usuario\\desktop\\programaci\u00F3n\\curso c# nivel 3\\repositoriosnivel3\\pokedexwebformasp.net\\pokedexwebforms\\listpokemons.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|solutionrelative:pokedexwebforms\\listpokemons.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|c:\\users\\usuario\\desktop\\programaci\u00F3n\\curso c# nivel 3\\repositoriosnivel3\\pokedexwebformasp.net\\pokedexwebforms\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|solutionrelative:pokedexwebforms\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|c:\\users\\usuario\\desktop\\programaci\u00F3n\\curso c# nivel 3\\repositoriosnivel3\\pokedexwebformasp.net\\pokedexwebforms\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|solutionrelative:pokedexwebforms\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\pokedexwebforms\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
       "RelativeMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|solutionrelative:pokedexwebforms\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|c:\\users\\usuario\\desktop\\programaci\u00F3n\\curso c# nivel 3\\repositoriosnivel3\\pokedexwebformasp.net\\pokedexwebforms\\listpokemons.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|solutionrelative:pokedexwebforms\\listpokemons.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|c:\\users\\usuario\\desktop\\programaci\u00F3n\\curso c# nivel 3\\repositoriosnivel3\\pokedexwebformasp.net\\pokedexwebforms\\pokemondetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|solutionrelative:pokedexwebforms\\pokemondetails.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|c:\\users\\usuario\\desktop\\programaci\u00F3n\\curso c# nivel 3\\repositoriosnivel3\\pokedexwebformasp.net\\pokedexwebforms\\css\\pokemondetails\\pokedexstyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|solutionrelative:pokedexwebforms\\css\\pokemondetails\\pokedexstyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,6 +47,58 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Default.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\Default.aspx.cs",
+              "RelativeDocumentMoniker": "PokedexWebForms\\Default.aspx.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\Default.aspx.cs",
+              "RelativeToolTip": "PokedexWebForms\\Default.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-30T03:56:40.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "pokedexStyle.css",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\css\\pokemonDetails\\pokedexStyle.css",
+              "RelativeDocumentMoniker": "PokedexWebForms\\css\\pokemonDetails\\pokedexStyle.css",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\css\\pokemonDetails\\pokedexStyle.css",
+              "RelativeToolTip": "PokedexWebForms\\css\\pokemonDetails\\pokedexStyle.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-30T03:53:46.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Site.css",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\Content\\Site.css",
+              "RelativeDocumentMoniker": "PokedexWebForms\\Content\\Site.css",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\Content\\Site.css",
+              "RelativeToolTip": "PokedexWebForms\\Content\\Site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-30T00:53:04.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PokemonDetails.aspx",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\PokemonDetails.aspx",
+              "RelativeDocumentMoniker": "PokedexWebForms\\PokemonDetails.aspx",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\PokemonDetails.aspx",
+              "RelativeToolTip": "PokedexWebForms\\PokemonDetails.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-09-29T23:25:42.577Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ListPokemons.aspx",
               "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\ListPokemons.aspx",
               "RelativeDocumentMoniker": "PokedexWebForms\\ListPokemons.aspx",
@@ -43,12 +111,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Site.Master",
               "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\Site.Master",
               "RelativeDocumentMoniker": "PokedexWebForms\\Site.Master",
               "ToolTip": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\Site.Master",
               "RelativeToolTip": "PokedexWebForms\\Site.Master",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2024-09-26T17:43:33.522Z",
               "EditorCaption": ""

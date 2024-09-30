@@ -1,0 +1,148 @@
+.cuadroDer{
+    background-color: #FF3036;    
+    height: 580px;
+    width: 450px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: relative;
+    top: 25px;
+    left: -5px;
+    box-shadow: 1px 2px 15px;
+    border: solid 2px #601e00;
+    z-index: 0;
+}
+.cuadroDerInt{
+    background-color: #f05107;    
+    height: 520px;
+    width: 450px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: relative;
+    top: 30px;
+    right: 30px;
+    border: solid 3px #601e00;
+    
+    box-shadow: inset 0px 0px 11px 5px;
+    z-index: 0;
+}
+
+.card-header{
+    background-color: whitesmoke;
+    box-shadow: 0px 1px 10px black;
+    color: black;
+}
+.cardType{
+    font-size: 20px;
+    position: relative;
+    top: 20px;
+    left: 90px;
+    width: 320px;
+    border: solid 2px black;
+    box-shadow: -2px 0px 5px black;
+    background-size: 6px 6px;
+    background-color: #8DBAA7;
+}
+.containerFisic{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.cardTypeFisic{
+    font-size: 20px;
+    position: relative;
+    top: 15px;
+    left: 28px;
+    width: 155px;
+    border: solid 2px black;
+    box-shadow: -2px 0px 5px black;
+    background-size: 6px 6px;
+    background-color: #8DBAA7;
+}
+
+.cartas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    left: -20px;
+}
+
+.cartasInvert {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    left: -40px;
+}
+
+.cuadroDerInvert {
+    background-color: #FF3036;
+    height: 580px;
+    width: 450px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: relative;
+    top: 25px;
+    left: 3px;
+    box-shadow: 1px 2px 15px;
+    border: solid 2px #601e00;
+    z-index: 0;
+    transform: rotate(180deg);
+}
+
+.cuadroDerIntInvert {
+    background-color: #f05107;
+    height: 520px;
+    width: 450px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: relative;
+    top: 30px;
+    right: 30px;
+    border: solid 3px #601e00;
+    box-shadow: inset 0px 0px 11px 5px;
+    z-index: 0;
+    transform: rotate(180deg);
+}
+
+
+/* .cuadroSup{
+    background-color: orange;
+    position: relative;
+    height: 100px;
+    width: 100px;
+    top: 20px;
+    left: 20px;
+    border-radius: 20px;
+    width: 1260px;
+    height: 560px;
+}
+.pantalla{
+    background-color: white;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: 15px;
+    left: 15px;
+    border-radius: 10px;
+    width: 500px;
+    height: 530px;
+}
+.cuadroDatos{
+    background-color: #BADBFF;
+    position: absolute;
+    height: 250px;
+    width: 690px;
+    left: 550px;
+    bottom: 100px;
+    top: 15px;
+    border-radius: 10px;
+}
+.cuadroHabilidades{
+    background-color: aliceblue;
+    position: absolute;
+    height: 265px;
+    width: 345px;
+} */

@@ -1,0 +1,43 @@
+.imgPokemon{
+    position: inherit;
+    top: 30px;
+    height: 270px;
+    width: 270px;
+}
+.screenFrame{
+    background-color: white;
+    height: 350px;
+    width: 330px;
+    top: 130px;
+    left: 50px;
+    position: relative;
+    border: solid 2px black;
+    border-radius: 5px;
+    border-bottom-left-radius: 25px;
+    box-shadow: -4px 0px 20px black;
+}
+.screen{
+    background-color: #8DBAA7;
+    position: inherit;
+    height: 330px;
+    width: 300px;
+    top: 8px;
+    left: 12px;
+    border: solid 1px black;
+    border-radius: 5px;
+    border-bottom-left-radius: 22px;
+    box-shadow: inset 0px 0px 11px 5px;
+    
+}
+.screenFront{
+    background-image: radial-gradient(#3d85c0 1px, transparent 1px);
+    background-size: 5px 5px;
+    background-color: transparent;
+    opacity: 0.4;
+    height: 330px;
+    width: 300px;
+    position: relative;
+    top: -270px;
+    border-radius: 5px;
+    border-bottom-left-radius: 22px;
+}

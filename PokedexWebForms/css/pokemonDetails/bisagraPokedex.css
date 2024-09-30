@@ -1,0 +1,29 @@
+.bisagra{
+    background-color: #FF3036;
+    height: 580px;
+    width: 70px;
+    top: 100px;
+    left: 412px;
+    position: absolute;
+    z-index: 3;
+    border-radius: 5px;
+    border: solid 2px black;
+}
+.bisagraSup{
+    background-color: black;
+    height: 30px;
+    width: 68px;
+    top: 28px;
+    position: relative;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.bisagraInf{
+    background-color: black;
+    height: 30px;
+    width: 68px;
+    bottom: 28px;
+    position: absolute;
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
