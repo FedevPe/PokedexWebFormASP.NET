@@ -21,7 +21,7 @@
     </div>
     <hr>
     <div class="row mt-4">
-        <%foreach (Dominio.Pokemon pokemon in ListaPokemons)
+        <%--<%foreach (Dominio.Pokemon pokemon in ListaPokemons)
           {%>
             <div class="col-xl-3 col-md-6 col-sm-12 mb-2">
                 <div class="card cardAnimation shadow h-100">
@@ -39,11 +39,35 @@
                         </div>
                     </div> 
                     <div class="card-footer d-flex">
-                        <a href="/PokemonDetails?Id=<%: pokemon.Id %>" class="btn btn-outline-primary">Detalles</a>
+                        <asp:Button runat="server" ID="btnDetails" cssclass="btn btn-outline-primary" OnClick="BtnDetails_Click" Text="Detalles" CommandArgument='<%# pokemon.Id%>'/>
                     </div>
                 </div>
             </div>
-        <%} %>
+        <%} %>--%>
+        <asp:Repeater runat="server" ID="cardPokemonRepeater">
+            <ItemTemplate>
+                <div class="col-xl-3 col-md-6 col-sm-12 mb-2">
+                    <div class="card cardAnimation shadow h-100">
+                        <div class="card-img-top text-center">
+                            <img src="<%#Eval("ImgUrl")%>" alt="" class="imgPokemon">
+                        </div>
+                        <div class="card-header">
+                            <div class="text-start clearfix">
+                                <h5><%#Eval("Nombre")%></h5>                                                    
+                            </div>
+                        </div>
+                        <div class="card-text mt-2 mb-2 h-100">
+                            <div class="container text-start h-100">
+                                <p><%#Eval("Bio") %></p>                            
+                            </div>
+                        </div> 
+                        <div class="card-footer d-flex">
+                            <asp:Button runat="server" ID="btnDetails" cssclass="btn btn-outline-primary" OnClick="BtnDetails_Click" Text="Detalles" CommandArgument='<%#Eval("Id")%>'/>
+                        </div>
+                    </div>
+                </div>
+            </ItemTemplate>
+        </asp:Repeater>
     </div>
 </div>
 <style>

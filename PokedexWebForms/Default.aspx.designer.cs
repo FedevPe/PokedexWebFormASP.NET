@@ -11,7 +11,7 @@ namespace PokedexWebForms
 {
 
 
-    public partial class _Default
+    public partial class Default
     {
     }
 }

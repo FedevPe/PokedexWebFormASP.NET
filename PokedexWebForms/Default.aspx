@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Loading..." Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PokedexWebForms._Default" %>
+﻿<%@ Page Title="Loading..." Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PokedexWebForms.Default" %>
 <!DOCTYPE html>
 
 <html lang="es">
@@ -18,22 +18,20 @@
         document.addEventListener("DOMContentLoaded", function () {
             var elemento = document.getElementById("pokeballAnim");
 
-            // Animación de entrada
+            
             setTimeout(function () {
                 elemento.classList.add("bounce-in-top");
-            }); // Añade la clase "activo" después de 1 segundo
-            // Animación estática
+            });
             setTimeout(function () {
                 elemento.classList.add("pulsate-fwd");
-            }, 1500); // Añade la clase "activo" después de 1 segundo
+            }, 1500); 
             setTimeout(function () {
                 elemento.classList.replace("pulsate-fwd","rotate-out-center");
-            }, 5000); // Añade la clase "activo" después de 1 segundo
-            // Animación de salida
+            }, 5000);
         });
-         //Redirigir después de 3 segundos (3000 ms)
+
         setTimeout(function () {
-            window.location.href = 'ListPokemons.aspx'; // Cambia por la página de destino
+            window.location.href = 'ListPokemons.aspx';
         }, 4000);
     </script>
 

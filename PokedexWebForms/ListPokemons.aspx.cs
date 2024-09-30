@@ -1,8 +1,8 @@
 ﻿using Dominio;
-using Negocio;
 using System;
 using System.Collections.Generic;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace PokedexWebForms
 {
@@ -13,8 +13,19 @@ namespace PokedexWebForms
         public List<Pokemon> ListaPokemons { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            PokemonNegocio negocio = new PokemonNegocio();
-            ListaPokemons = negocio.Listar();
+            if ((!IsPostBack) && Session["ListPokemons"] != null)
+            {
+                ListaPokemons = Session["ListPokemons"] as List<Pokemon>;
+                cardPokemonRepeater.DataSource = ListaPokemons;
+                cardPokemonRepeater.DataBind();
+            }
+        }
+        protected void BtnDetails_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(((Button)sender).CommandArgument);
+
+            Session.Add("IdPokemonDetail", id);
+            Response.Redirect("PokemonDetails", false);
         }
     }
 }
