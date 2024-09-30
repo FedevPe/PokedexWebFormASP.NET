@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ListPokemons.aspx.cs" Inherits="PokedexWebForms.ListPokemons" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <div class="container">
     <div class="container-fluid rounded border shadow-sm mt-4 bg-white">
@@ -10,65 +11,48 @@
         <div class="row g-2">
             <div class="col-md-8 col-sm-12 mb-3">
                 <div class="form-floating">
-                    <input class="form-control" id="txtSearch" type="text" placeholder="">  
-                    <label for="txtSearch">Nombre o número</label>
+                    <asp:TextBox cssclass="form-control" id="TxtSearch" type="text" placeholder="Nombre del Pokemon" runat="server" OnTextChanged="TxtSearch_TextChanged" AutoPostBack="true" />  
                 </div>
             </div>
-            <div class="col-md-4 col-sm-12 align-content-center text-end ">
-                <button class="btn btn-primary mb-2"><i class="fa-solid fa-circle-plus me-2"></i>Agregar Pokemon</button>
+            <div class="col-md-4 col-sm-12 align-content-center text-end">
+                <asp:Button CssClass="btn btn-primary mb-2 " Text="Agregar Pokemon" runat="server"/>
             </div>
         </div>
     </div>
     <hr>
-    <div class="row mt-4">
-        <%--<%foreach (Dominio.Pokemon pokemon in ListaPokemons)
-          {%>
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-2">
-                <div class="card cardAnimation shadow h-100">
-                    <div class="card-img-top text-center">
-                        <img src="<%:pokemon.ImgUrl%>" alt="" class="imgPokemon">
-                    </div>
-                    <div class="card-header">
-                        <div class="text-start clearfix">
-                            <h5><%:pokemon.Nombre%></h5>                                                    
-                        </div>
-                    </div>
-                    <div class="card-text mt-2 mb-2 h-100">
-                        <div class="container text-start h-100">
-                            <p><%:pokemon.Bio %></p>                            
-                        </div>
-                    </div> 
-                    <div class="card-footer d-flex">
-                        <asp:Button runat="server" ID="btnDetails" cssclass="btn btn-outline-primary" OnClick="BtnDetails_Click" Text="Detalles" CommandArgument='<%# pokemon.Id%>'/>
-                    </div>
-                </div>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+        <ContentTemplate>
+            <div class="row mt-4"> 
+                <asp:Repeater runat="server" ID="cardPokemonRepeater">
+                    <ItemTemplate>
+                           <div class="col-xl-3 col-md-6 col-sm-12 mb-2">
+                            <div class="card cardAnimation shadow h-100">
+                                <div class="card-img-top text-center">
+                                    <img src="<%#Eval("ImgUrl")%>" alt="" class="imgPokemon">
+                                </div>
+                                <div class="card-header">
+                                    <div class="text-start">
+                                        <h5><%#Eval("Nombre")%></h5>                                                    
+                                    </div>
+                                </div>
+                                <div class="card-text mt-2 mb-2 h-100">
+                                    <div class="container text-start h-100">
+                                        <p><%#Eval("Bio") %></p>                            
+                                    </div>
+                                </div> 
+                                <div class="card-footer d-flex">
+                                    <asp:Button runat="server" ID="btnDetails" CssClass="btn btn-outline-primary" OnClick="BtnDetails_Click" Text="Detalles" CommandArgument='<%#Eval("Id")%>'/>
+                                </div>
+                            </div>
+                           </div>
+                    </ItemTemplate>
+                </asp:Repeater>
             </div>
-        <%} %>--%>
-        <asp:Repeater runat="server" ID="cardPokemonRepeater">
-            <ItemTemplate>
-                <div class="col-xl-3 col-md-6 col-sm-12 mb-2">
-                    <div class="card cardAnimation shadow h-100">
-                        <div class="card-img-top text-center">
-                            <img src="<%#Eval("ImgUrl")%>" alt="" class="imgPokemon">
-                        </div>
-                        <div class="card-header">
-                            <div class="text-start clearfix">
-                                <h5><%#Eval("Nombre")%></h5>                                                    
-                            </div>
-                        </div>
-                        <div class="card-text mt-2 mb-2 h-100">
-                            <div class="container text-start h-100">
-                                <p><%#Eval("Bio") %></p>                            
-                            </div>
-                        </div> 
-                        <div class="card-footer d-flex">
-                            <asp:Button runat="server" ID="btnDetails" cssclass="btn btn-outline-primary" OnClick="BtnDetails_Click" Text="Detalles" CommandArgument='<%#Eval("Id")%>'/>
-                        </div>
-                    </div>
-                </div>
-            </ItemTemplate>
-        </asp:Repeater>
-    </div>
+        </ContentTemplate>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="TxtSearch" EventName="TextChanged" />
+        </Triggers>
+    </asp:UpdatePanel>
 </div>
 <style>
     .sizeImg{

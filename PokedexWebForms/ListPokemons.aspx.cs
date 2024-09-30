@@ -13,11 +13,15 @@ namespace PokedexWebForms
         public List<Pokemon> ListaPokemons { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if ((!IsPostBack) && Session["ListPokemons"] != null)
+            if (Session["ListPokemons"] != null)
             {
                 ListaPokemons = Session["ListPokemons"] as List<Pokemon>;
                 cardPokemonRepeater.DataSource = ListaPokemons;
                 cardPokemonRepeater.DataBind();
+            }
+            else
+            {
+                Response.Redirect("Default.aspx", false);
             }
         }
         protected void BtnDetails_Click(object sender, EventArgs e)
@@ -26,6 +30,25 @@ namespace PokedexWebForms
 
             Session.Add("IdPokemonDetail", id);
             Response.Redirect("PokemonDetails", false);
+        }
+
+        protected void TxtSearch_TextChanged(object sender, EventArgs e)
+        {
+            if(!string.IsNullOrWhiteSpace(TxtSearch.Text))
+            {
+                List<Pokemon> listaFiltro = new List<Pokemon>();
+                listaFiltro = ((List<Pokemon>)Session["ListPokemons"]).FindAll(
+                    x => x.Nombre.ToLower().Contains(TxtSearch.Text.ToLower()));
+
+                cardPokemonRepeater.DataSource = listaFiltro;
+            }
+            else
+            {
+                ListaPokemons = Session["ListPokemons"] as List<Pokemon>;
+                cardPokemonRepeater.DataSource = ListaPokemons;
+                
+            }
+            cardPokemonRepeater.DataBind();
         }
     }
 }
