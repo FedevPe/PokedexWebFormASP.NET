@@ -11,12 +11,19 @@
       "RelativeMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|solutionrelative:pokedexwebforms\\listpokemons.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\pokedexwebforms\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|solutionrelative:pokedexwebforms\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\pokedexwebforms\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
       "RelativeMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|solutionrelative:pokedexwebforms\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\pokedexwebforms\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|solutionrelative:pokedexwebforms\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|c:\\users\\usuario\\desktop\\programaci\u00F3n\\curso c# nivel 3\\repositoriosnivel3\\pokedexwebformasp.net\\pokedexwebforms\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B26A542-D327-4990-B3E6-05BCA94CD0A2}|PokedexWebForms\\PokedexWebForms.csproj|solutionrelative:pokedexwebforms\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Usuario\\AppData\\Local\\Temp\\.vsdbgsrc\\f874287db157d1fea2f37e0eeda1c2b261e68ba5047d571e08083492d3c41742\\Control.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +33,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 271,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,7 +45,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
+              "Title": "Control.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\AppData\\Local\\Temp\\.vsdbgsrc\\f874287db157d1fea2f37e0eeda1c2b261e68ba5047d571e08083492d3c41742\\Control.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\f874287db157d1fea2f37e0eeda1c2b261e68ba5047d571e08083492d3c41742\\Control.cs",
+              "ToolTip": "C:\\Users\\Usuario\\AppData\\Local\\Temp\\.vsdbgsrc\\f874287db157d1fea2f37e0eeda1c2b261e68ba5047d571e08083492d3c41742\\Control.cs [Solo lectura]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\f874287db157d1fea2f37e0eeda1c2b261e68ba5047d571e08083492d3c41742\\Control.cs [Solo lectura]",
+              "ViewState": "AgIAAOYKAAAAAAAAAAArwPUKAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T12:45:43.738Z",
+              "EditorCaption": " [Solo lectura]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Default.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\Default.aspx.cs",
+              "RelativeDocumentMoniker": "PokedexWebForms\\Default.aspx.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\Default.aspx.cs",
+              "RelativeToolTip": "PokedexWebForms\\Default.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T12:42:58.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Site.Master",
               "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\Site.Master",
               "RelativeDocumentMoniker": "PokedexWebForms\\Site.Master",
@@ -51,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Default.aspx",
               "DocumentMoniker": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\Default.aspx",
               "RelativeDocumentMoniker": "PokedexWebForms\\Default.aspx",
@@ -83,7 +116,7 @@
               "RelativeDocumentMoniker": "PokedexWebForms\\ListPokemons.aspx.cs",
               "ToolTip": "C:\\Users\\Usuario\\Desktop\\Programaci\u00F3n\\Curso C# Nivel 3\\RepositoriosNivel3\\PokedexWebFormASP.NET\\PokedexWebForms\\ListPokemons.aspx.cs",
               "RelativeToolTip": "PokedexWebForms\\ListPokemons.aspx.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAAACcAAABQAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAgwCUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-30T16:15:36.595Z",
               "EditorCaption": ""

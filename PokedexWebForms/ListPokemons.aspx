@@ -48,36 +48,36 @@
                     </ItemTemplate>
                 </asp:Repeater>
             </div>
+            <div class="row text-center mt-4">
+                <div class="col-12">
+                    <nav>
+                        <ul class="pagination justify-content-center">
+                            <%--<li class="page-item" id="previousPageItem">
+                                <asp:LinkButton runat="server" ID="btnPrevious" CssClass="page-link" OnClick="BtnPrevious_Click">Previous</asp:LinkButton>
+                            </li>--%>
+
+                            <asp:Repeater runat="server" ID="pageNumberRepeater">
+                                <ItemTemplate>
+                                    <li class="page-item <%# Convert.ToInt32(ViewState["CurrentPage"]) == Convert.ToInt32(Container.DataItem) ? "active" : "" %>">
+                                        <asp:LinkButton runat="server" CssClass="page-link" OnClick="PageNumber_Click" CommandArgument='<%# Container.DataItem %>'>
+                                            <%# Container.DataItem %>
+                                        </asp:LinkButton>
+                                    </li>
+                                </ItemTemplate>
+                            </asp:Repeater>
+
+                            <%--<li class="page-item" id="nextPageItem">
+                                <asp:LinkButton runat="server" ID="btnNext" CssClass="page-link" OnClick="BtnNext_Click">Next</asp:LinkButton>
+                            </li>--%>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
         </ContentTemplate>
         <Triggers>
             <asp:AsyncPostBackTrigger ControlID="TxtSearch" EventName="TextChanged" />
         </Triggers>
     </asp:UpdatePanel>
-    <div class="row text-center mt-4">
-        <div class="col-12">
-            <nav>
-                <ul class="pagination justify-content-center">
-                    <li class="page-item" id="previousPageItem">
-                        <asp:LinkButton runat="server" ID="btnPrevious" CssClass="page-link" OnClick="BtnPrevious_Click">Previous</asp:LinkButton>
-                    </li>
-
-                    <asp:Repeater runat="server" ID="pageNumberRepeater">
-                        <ItemTemplate>
-                            <li class="page-item <%# Convert.ToInt32(ViewState["CurrentPage"]) == Convert.ToInt32(Container.DataItem) ? "active" : "" %>">
-                                <asp:LinkButton runat="server" CssClass="page-link" OnClick="PageNumber_Click" CommandArgument='<%# Container.DataItem %>'>
-                                    <%# Container.DataItem %>
-                                </asp:LinkButton>
-                            </li>
-                        </ItemTemplate>
-                    </asp:Repeater>
-
-                    <li class="page-item" id="nextPageItem">
-                        <asp:LinkButton runat="server" ID="btnNext" CssClass="page-link" OnClick="BtnNext_Click">Next</asp:LinkButton>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
 </div>
 <style>
     .sizeImg{

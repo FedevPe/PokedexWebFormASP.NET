@@ -18,7 +18,6 @@
         document.addEventListener("DOMContentLoaded", function () {
             var elemento = document.getElementById("pokeballAnim");
 
-            
             setTimeout(function () {
                 elemento.classList.add("bounce-in-top");
             });

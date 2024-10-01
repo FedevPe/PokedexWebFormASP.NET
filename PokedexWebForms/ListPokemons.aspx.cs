@@ -1,7 +1,6 @@
 ﻿using Dominio;
 using System;
 using System.Collections.Generic;
-using System.Drawing.Printing;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -12,15 +11,17 @@ namespace PokedexWebForms
     {
         //private readonly bool _flag = true;
         //private readonly string _activeClass = "active";
-        private readonly int _elementosPagina = 12;
+        private readonly int _elementsxPage = 12;
 
-        public List<Pokemon> ListaPokemons { get; set; }
+        public List<Pokemon> PokemonList { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack && TxtSearch != null)
+            FilterList();
+            if (!IsPostBack)
             {
                 ViewState.Add("CurrentPage", 1);
-                LoadPokemonsList(1);
+                LoadPokemonsList();
             }
         }
         protected void BtnDetails_Click(object sender, EventArgs e)
@@ -33,46 +34,28 @@ namespace PokedexWebForms
 
         protected void TxtSearch_TextChanged(object sender, EventArgs e)
         {
-            if(!string.IsNullOrWhiteSpace(TxtSearch.Text))
-            {
-                List<Pokemon> listaFiltro = new List<Pokemon>();
-                listaFiltro = ((List<Pokemon>)Session["ListPokemons"]).FindAll(
-                    x => x.Nombre.ToLower().Contains(TxtSearch.Text.ToLower()));
-
-                cardPokemonRepeater.DataSource = listaFiltro;
-            }
-            else
-            {
-                ListaPokemons = Session["ListPokemons"] as List<Pokemon>;
-                cardPokemonRepeater.DataSource = ListaPokemons;
-                
-            }
-            cardPokemonRepeater.DataBind();
+            FilterList();
+            LoadPokemonsList();
         }
-        private void LoadPokemonsList(int pagina)
+        private void LoadPokemonsList(int page = 1)
         {
-            if (Session["ListPokemons"] != null)
+            if (Session["PokemonsList"] != null)
             {
-                ListaPokemons = (List<Pokemon>)Session["ListPokemons"] ;
+                FilterList();
 
-                int totalRegistros = ListaPokemons.Count;
-                int paginasTotales = (int)Math.Ceiling((double)totalRegistros / _elementosPagina);
+                int totalPokemons = PokemonList.Count;
+                int totalPages = (int)Math.Ceiling((double)totalPokemons / _elementsxPage);
 
-                List<Pokemon> listaPaginada = ListaPokemons.Skip((pagina - 1) * _elementosPagina).Take(_elementosPagina).ToList();
+                List<Pokemon> PaginatedList = PokemonList.Skip((page - 1) * _elementsxPage).Take(_elementsxPage).ToList();
 
-                cardPokemonRepeater.DataSource = listaPaginada;
+                cardPokemonRepeater.DataSource = PaginatedList;
                 cardPokemonRepeater.DataBind();
 
-                var pages = Enumerable.Range(1, paginasTotales).ToList();
+                var pages = Enumerable.Range(1, totalPages).ToList();
                 pageNumberRepeater.DataSource = pages;
                 pageNumberRepeater.DataBind();
 
-                
-                btnPrevious.Enabled = pagina > 1;
-                btnNext.Enabled = pagina < paginasTotales;
-
-                
-                ViewState["CurrentPage"] = pagina;
+                ViewState["CurrentPage"] = page;
             }
             else
             {
@@ -82,23 +65,23 @@ namespace PokedexWebForms
         protected void PageNumber_Click(object sender, EventArgs e)
         {
             LinkButton btn = (LinkButton)sender;
-            int pagina = int.Parse(btn.CommandArgument);
+            int page = int.Parse(btn.CommandArgument);
             ViewState["CurrentPage"] = Convert.ToInt32(btn.CommandArgument);
-            LoadPokemonsList(pagina);
+            LoadPokemonsList(page);
         }
-
-        protected void BtnPrevious_Click(object sender, EventArgs e)
+        private void FilterList()
         {
-            int paginaActual = Convert.ToInt32(ViewState["CurrentPage"]);
-            paginaActual--;
-            LoadPokemonsList(paginaActual);
-        }
+            PokemonList = null;
 
-        protected void BtnNext_Click(object sender, EventArgs e)
-        {
-            int paginaActual = Convert.ToInt32(ViewState["CurrentPage"]);
-            paginaActual++;
-            LoadPokemonsList(paginaActual);
+            if (!string.IsNullOrWhiteSpace(TxtSearch.Text.Trim()))
+            {
+                PokemonList = ((List<Pokemon>)Session["PokemonsList"]).FindAll(
+                    x => x.Nombre.ToLower().Contains(TxtSearch.Text.ToLower()));
+            }
+            else
+            {
+                PokemonList = (List<Pokemon>)Session["PokemonsList"];
+            }
         }
     }
 }

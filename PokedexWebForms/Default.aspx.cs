@@ -1,8 +1,6 @@
-﻿using Dominio;
-using Negocio;
+﻿using Negocio;
 using Service;
 using System;
-using System.Collections.Generic;
 using System.Web.UI;
 
 namespace PokedexWebForms
@@ -15,9 +13,9 @@ namespace PokedexWebForms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session.Add("ListPokemons",pokemonNegocio.Listar());
-            Session.Add("ListHabilities", habilidadNegocio.ListAllHabilities());
-            Session.Add("ListElementos", elementoNegocio.Listar());
+            Session.Add("PokemonsList", pokemonNegocio.Listar());
+            Session.Add("SkillsList", habilidadNegocio.ListAllHabilities());
+            Session.Add("ElementsList", elementoNegocio.Listar());
         }
     }
 }

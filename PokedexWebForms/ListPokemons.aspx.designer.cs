@@ -42,15 +42,6 @@ namespace PokedexWebForms
         protected global::System.Web.UI.WebControls.Repeater cardPokemonRepeater;
 
         /// <summary>
-        /// Control btnPrevious.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnPrevious;
-
-        /// <summary>
         /// Control pageNumberRepeater.
         /// </summary>
         /// <remarks>
@@ -58,14 +49,5 @@ namespace PokedexWebForms
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater pageNumberRepeater;
-
-        /// <summary>
-        /// Control btnNext.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnNext;
     }
 }
