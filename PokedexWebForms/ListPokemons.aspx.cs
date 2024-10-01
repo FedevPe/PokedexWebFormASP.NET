@@ -1,6 +1,8 @@
 ﻿using Dominio;
 using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
+using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -8,20 +10,17 @@ namespace PokedexWebForms
 {
     public partial class ListPokemons : Page
     {
-        public bool flag = true;
-        public string activeClass = "active";
+        //private readonly bool _flag = true;
+        //private readonly string _activeClass = "active";
+        private readonly int _elementosPagina = 12;
+
         public List<Pokemon> ListaPokemons { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["ListPokemons"] != null)
+            if (!IsPostBack && TxtSearch != null)
             {
-                ListaPokemons = Session["ListPokemons"] as List<Pokemon>;
-                cardPokemonRepeater.DataSource = ListaPokemons;
-                cardPokemonRepeater.DataBind();
-            }
-            else
-            {
-                Response.Redirect("Default.aspx", false);
+                ViewState.Add("CurrentPage", 1);
+                LoadPokemonsList(1);
             }
         }
         protected void BtnDetails_Click(object sender, EventArgs e)
@@ -49,6 +48,57 @@ namespace PokedexWebForms
                 
             }
             cardPokemonRepeater.DataBind();
+        }
+        private void LoadPokemonsList(int pagina)
+        {
+            if (Session["ListPokemons"] != null)
+            {
+                ListaPokemons = (List<Pokemon>)Session["ListPokemons"] ;
+
+                int totalRegistros = ListaPokemons.Count;
+                int paginasTotales = (int)Math.Ceiling((double)totalRegistros / _elementosPagina);
+
+                List<Pokemon> listaPaginada = ListaPokemons.Skip((pagina - 1) * _elementosPagina).Take(_elementosPagina).ToList();
+
+                cardPokemonRepeater.DataSource = listaPaginada;
+                cardPokemonRepeater.DataBind();
+
+                var pages = Enumerable.Range(1, paginasTotales).ToList();
+                pageNumberRepeater.DataSource = pages;
+                pageNumberRepeater.DataBind();
+
+                
+                btnPrevious.Enabled = pagina > 1;
+                btnNext.Enabled = pagina < paginasTotales;
+
+                
+                ViewState["CurrentPage"] = pagina;
+            }
+            else
+            {
+                Response.Redirect("Default.aspx", false);
+            }
+        }
+        protected void PageNumber_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)sender;
+            int pagina = int.Parse(btn.CommandArgument);
+            ViewState["CurrentPage"] = Convert.ToInt32(btn.CommandArgument);
+            LoadPokemonsList(pagina);
+        }
+
+        protected void BtnPrevious_Click(object sender, EventArgs e)
+        {
+            int paginaActual = Convert.ToInt32(ViewState["CurrentPage"]);
+            paginaActual--;
+            LoadPokemonsList(paginaActual);
+        }
+
+        protected void BtnNext_Click(object sender, EventArgs e)
+        {
+            int paginaActual = Convert.ToInt32(ViewState["CurrentPage"]);
+            paginaActual++;
+            LoadPokemonsList(paginaActual);
         }
     }
 }

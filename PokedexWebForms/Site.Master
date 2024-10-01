@@ -43,7 +43,7 @@
         </asp:ScriptManager>
 
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-light shadow-sm border">
-            <div class="container-fluid ">            
+            <div class="container-fluid flex-grow-1">            
             <a class="link-home navbar-brand fc-white fw-bold fs-2 " runat="server" href="~/">
                 PokeApp
             </a>
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </nav>
-        <div class="container-fluid body-content">            
+        <div class="container-fluid body-content overflow-auto">            
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
 
